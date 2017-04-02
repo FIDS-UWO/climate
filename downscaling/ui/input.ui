@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>670</width>
+    <height>542</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>1000</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>GCM Processing</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Interpolation</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="leftMargin">
+         <number>8</number>
+        </property>
+        <property name="topMargin">
+         <number>8</number>
+        </property>
+        <property name="rightMargin">
+         <number>8</number>
+        </property>
+        <property name="bottomMargin">
+         <number>8</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QGroupBox" name="filesGroupBox">
+            <property name="title">
+             <string>Input Files</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout">
+               <item>
+                <layout class="QFormLayout" name="formLayout_4">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label">
+                   <property name="text">
+                    <string>Path</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="pathLineEdit"/>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="outputLabel">
+                   <property name="text">
+                    <string>Ouput</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="outputLineEdit"/>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_2">
+                 <item>
+                  <widget class="QPushButton" name="browseBtn">
+                   <property name="text">
+                    <string>Browse...</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="outBrowseBtn">
+                   <property name="text">
+                    <string>Browse...</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox">
+            <property name="title">
+             <string>Stations</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <widget class="PastableTableWidget" name="stationTable">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
+               <property name="gridStyle">
+                <enum>Qt::SolidLine</enum>
+               </property>
+               <property name="sortingEnabled">
+                <bool>false</bool>
+               </property>
+               <property name="rowCount">
+                <number>100</number>
+               </property>
+               <attribute name="horizontalHeaderVisible">
+                <bool>true</bool>
+               </attribute>
+               <attribute name="horizontalHeaderCascadingSectionResizes">
+                <bool>true</bool>
+               </attribute>
+               <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                <bool>false</bool>
+               </attribute>
+               <attribute name="horizontalHeaderStretchLastSection">
+                <bool>false</bool>
+               </attribute>
+               <attribute name="verticalHeaderVisible">
+                <bool>true</bool>
+               </attribute>
+               <attribute name="verticalHeaderCascadingSectionResizes">
+                <bool>false</bool>
+               </attribute>
+               <attribute name="verticalHeaderStretchLastSection">
+                <bool>false</bool>
+               </attribute>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <row/>
+               <column>
+                <property name="text">
+                 <string>Name</string>
+                </property>
+                <property name="font">
+                 <font>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Lat (° N)</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Lon (° E)</string>
+                </property>
+               </column>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="optionsGroupBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>250</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="title">
+           <string>Options</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QGroupBox" name="groupBox_4">
+             <property name="title">
+              <string>Parameters</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <layout class="QFormLayout" name="formLayout_3">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="variableLabel">
+                  <property name="text">
+                   <string>Variable</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLineEdit" name="varEdit">
+                  <property name="placeholderText">
+                   <string extracomment="fda"/>
+                  </property>
+                  <property name="clearButtonEnabled">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="alphaLabel">
+                  <property name="text">
+                   <string>Alpha</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QDoubleSpinBox" name="alphaSpin">
+                  <property name="accelerated">
+                   <bool>false</bool>
+                  </property>
+                  <property name="showGroupSeparator" stdset="0">
+                   <bool>false</bool>
+                  </property>
+                  <property name="decimals">
+                   <number>1</number>
+                  </property>
+                  <property name="minimum">
+                   <double>1.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>10.000000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>2.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="pointsLabel">
+                  <property name="text">
+                   <string>Points</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QSpinBox" name="pointsSpin">
+                  <property name="minimum">
+                   <number>2</number>
+                  </property>
+                  <property name="maximum">
+                   <number>10</number>
+                  </property>
+                  <property name="value">
+                   <number>4</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="label_2">
+                  <property name="text">
+                   <string>Filter</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLineEdit" name="extraLineEdit"/>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="timeGroupBox">
+             <property name="title">
+              <string>Time Bounds</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_3">
+              <item>
+               <layout class="QFormLayout" name="formLayout">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="startLabel">
+                  <property name="text">
+                   <string>Start Date</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QDateEdit" name="startDateEdit">
+                  <property name="time">
+                   <time>
+                    <hour>12</hour>
+                    <minute>0</minute>
+                    <second>0</second>
+                   </time>
+                  </property>
+                  <property name="calendarPopup">
+                   <bool>false</bool>
+                  </property>
+                  <property name="date">
+                   <date>
+                    <year>1975</year>
+                    <month>1</month>
+                    <day>1</day>
+                   </date>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="endLabel">
+                  <property name="text">
+                   <string>End Date</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QDateEdit" name="endDateEdit">
+                  <property name="time">
+                   <time>
+                    <hour>12</hour>
+                    <minute>0</minute>
+                    <second>0</second>
+                   </time>
+                  </property>
+                  <property name="calendarPopup">
+                   <bool>false</bool>
+                  </property>
+                  <property name="date">
+                   <date>
+                    <year>2005</year>
+                    <month>1</month>
+                    <day>1</day>
+                   </date>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="spatialGroupBox">
+             <property name="title">
+              <string>Spatial Extent</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <layout class="QFormLayout" name="formLayout_2">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="northLabel">
+                  <property name="text">
+                   <string>North</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QDoubleSpinBox" name="northSpin">
+                  <property name="prefix">
+                   <string/>
+                  </property>
+                  <property name="suffix">
+                   <string> ° N</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="eastLabel">
+                  <property name="text">
+                   <string>East</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QDoubleSpinBox" name="eastSpin">
+                  <property name="suffix">
+                   <string> ° E</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="southLabel">
+                  <property name="text">
+                   <string>South</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QDoubleSpinBox" name="southSpin">
+                  <property name="suffix">
+                   <string> ° N</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="westLabel">
+                  <property name="text">
+                   <string>West</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QDoubleSpinBox" name="westSpin">
+                  <property name="suffix">
+                   <string> ° E</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="resetBtn">
+             <property name="text">
+              <string>Reset</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="runBtn">
+             <property name="text">
+              <string>Run</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Scaling</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_15">
+        <property name="leftMargin">
+         <number>8</number>
+        </property>
+        <property name="topMargin">
+         <number>8</number>
+        </property>
+        <property name="rightMargin">
+         <number>8</number>
+        </property>
+        <property name="bottomMargin">
+         <number>8</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_12">
+          <item>
+           <widget class="QGroupBox" name="inputFilesGroupBox">
+            <property name="title">
+             <string>Input Files</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_10">
+             <item>
+              <layout class="QGridLayout" name="gridLayout">
+               <item row="0" column="0">
+                <widget class="QLabel" name="cfmVarNameLabel">
+                 <property name="text">
+                  <string>Variable Name</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="cfmVarNameEdit"/>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="observedFileLabel">
+                 <property name="text">
+                  <string>Observed File</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="observedFileEdit"/>
+               </item>
+               <item row="1" column="2">
+                <widget class="QPushButton" name="observedFileBrowse">
+                 <property name="text">
+                  <string>Browse...</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="historicalFileLabel">
+                 <property name="text">
+                  <string>Historical GCM File</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="historicalFileEdit"/>
+               </item>
+               <item row="2" column="2">
+                <widget class="QPushButton" name="historicalFileBrowse">
+                 <property name="text">
+                  <string>Browse...</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="futureFileLabel">
+                 <property name="text">
+                  <string>Future GCM File</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="futureFileEdit"/>
+               </item>
+               <item row="3" column="2">
+                <widget class="QPushButton" name="futureFileBrowse">
+                 <property name="text">
+                  <string>Browse...</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="outputPathLabel">
+                 <property name="text">
+                  <string>Output Path</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="outLineEdit"/>
+               </item>
+               <item row="4" column="2">
+                <widget class="QPushButton" name="outBrowse">
+                 <property name="text">
+                  <string>Browse...</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QGroupBox" name="optionsGroupBox_2">
+              <property name="title">
+               <string>Options</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_9">
+               <item>
+                <layout class="QGridLayout" name="gridLayout_2">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="scalingLabel">
+                   <property name="text">
+                    <string>Scaling Method</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QComboBox" name="scalingComboBox">
+                   <item>
+                    <property name="text">
+                     <string>Additive</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Multiplicative</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="label_5">
+                   <property name="text">
+                    <string>Bins</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QSpinBox" name="binsSpinBox">
+                   <property name="minimum">
+                    <number>2</number>
+                   </property>
+                   <property name="maximum">
+                    <number>100</number>
+                   </property>
+                   <property name="value">
+                    <number>25</number>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_11">
+              <item>
+               <widget class="QPushButton" name="cfmResetBtn">
+                <property name="text">
+                 <string>Reset</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="runButton">
+                <property name="maximumSize">
+                 <size>
+                  <width>100</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Run</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>KNN Weather Generator</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_14">
+        <property name="leftMargin">
+         <number>8</number>
+        </property>
+        <property name="topMargin">
+         <number>8</number>
+        </property>
+        <property name="rightMargin">
+         <number>8</number>
+        </property>
+        <property name="bottomMargin">
+         <number>8</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_13">
+          <item>
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="title">
+             <string>Add Variables</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_27">
+             <item>
+              <layout class="QGridLayout" name="gridLayout_5">
+               <item row="1" column="3" colspan="2">
+                <spacer name="horizontalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>358</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="3" column="4">
+                <widget class="QPushButton" name="knnAddFile">
+                 <property name="text">
+                  <string>Add</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2" colspan="3">
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>408</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="inputFileLabel">
+                 <property name="text">
+                  <string>Input File</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="4">
+                <widget class="QPushButton" name="knnBrowse">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="text">
+                  <string>Browse...</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1" colspan="2">
+                <widget class="QLineEdit" name="knnVarNameEdit"/>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="perturbationLabel">
+                 <property name="text">
+                  <string>Perturbation</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0" colspan="4">
+                <spacer name="horizontalSpacer_17">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>488</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="1" colspan="3">
+                <widget class="QLineEdit" name="knnInputEdit"/>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="varNameLabel">
+                 <property name="text">
+                  <string>Variable Name</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QComboBox" name="knnPerturbation">
+                 <item>
+                  <property name="text">
+                   <string>(0) None</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>(1) Normal</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>(2) Log-Normal</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+            <zorder></zorder>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QGroupBox" name="groupBox_7">
+              <property name="title">
+               <string>Current Variables</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_31">
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_30">
+                 <item>
+                  <widget class="QTableWidget" name="knnTableWidget">
+                   <property name="editTriggers">
+                    <set>QAbstractItemView::NoEditTriggers</set>
+                   </property>
+                   <property name="selectionMode">
+                    <enum>QAbstractItemView::SingleSelection</enum>
+                   </property>
+                   <property name="selectionBehavior">
+                    <enum>QAbstractItemView::SelectRows</enum>
+                   </property>
+                   <property name="rowCount">
+                    <number>0</number>
+                   </property>
+                   <attribute name="horizontalHeaderVisible">
+                    <bool>false</bool>
+                   </attribute>
+                   <attribute name="horizontalHeaderCascadingSectionResizes">
+                    <bool>false</bool>
+                   </attribute>
+                   <attribute name="verticalHeaderVisible">
+                    <bool>false</bool>
+                   </attribute>
+                   <attribute name="verticalHeaderCascadingSectionResizes">
+                    <bool>false</bool>
+                   </attribute>
+                   <column>
+                    <property name="text">
+                     <string>Variable Name</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>File</string>
+                    </property>
+                   </column>
+                   <column>
+                    <property name="text">
+                     <string>Perturbation</string>
+                    </property>
+                   </column>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_10">
+                   <item>
+                    <spacer name="horizontalSpacer_4">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="knnRemoveFile">
+                     <property name="text">
+                      <string>Remove</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="groupBox_6">
+              <property name="title">
+               <string>Options</string>
+              </property>
+              <layout class="QFormLayout" name="formLayout_9">
+               <item row="0" column="0">
+                <widget class="QLabel" name="windowLabel">
+                 <property name="text">
+                  <string>Window Size</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QSpinBox" name="windowSpin">
+                 <property name="readOnly">
+                  <bool>false</bool>
+                 </property>
+                 <property name="suffix">
+                  <string> days</string>
+                 </property>
+                 <property name="prefix">
+                  <string/>
+                 </property>
+                 <property name="minimum">
+                  <number>4</number>
+                 </property>
+                 <property name="maximum">
+                  <number>30</number>
+                 </property>
+                 <property name="singleStep">
+                  <number>2</number>
+                 </property>
+                 <property name="value">
+                  <number>14</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="lambdaLabel">
+                 <property name="text">
+                  <string>Lambda</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QDoubleSpinBox" name="lambdaSpin">
+                 <property name="maximum">
+                  <double>1.000000000000000</double>
+                 </property>
+                 <property name="singleStep">
+                  <double>0.100000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>0.900000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="replicationsLabel">
+                 <property name="text">
+                  <string>Replications</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QSpinBox" name="replicationsSpin">
+                 <property name="minimum">
+                  <number>1</number>
+                 </property>
+                 <property name="maximum">
+                  <number>20</number>
+                 </property>
+                 <property name="value">
+                  <number>5</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="blockSizeLabel">
+                 <property name="text">
+                  <string>Block Size</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QSpinBox" name="blockSizeSpin">
+                 <property name="minimum">
+                  <number>1</number>
+                 </property>
+                 <property name="maximum">
+                  <number>30</number>
+                 </property>
+                 <property name="value">
+                  <number>10</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="0" colspan="3">
+             <spacer name="horizontalSpacer_5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>518</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="3">
+             <widget class="QPushButton" name="knnResetInput">
+              <property name="text">
+               <string>Reset</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="knnOutputPathLabel">
+              <property name="text">
+               <string>Output Path</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="knnOutputLineEdit"/>
+            </item>
+            <item row="1" column="2">
+             <widget class="QPushButton" name="knnOutputBrowse">
+              <property name="text">
+               <string>Browse...</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QPushButton" name="knnRun">
+              <property name="text">
+               <string>Run</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PastableTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header location="global">/run_idw/</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>pathLineEdit</tabstop>
+  <tabstop>browseBtn</tabstop>
+  <tabstop>outputLineEdit</tabstop>
+  <tabstop>outBrowseBtn</tabstop>
+  <tabstop>stationTable</tabstop>
+  <tabstop>varEdit</tabstop>
+  <tabstop>alphaSpin</tabstop>
+  <tabstop>pointsSpin</tabstop>
+  <tabstop>extraLineEdit</tabstop>
+  <tabstop>timeGroupBox</tabstop>
+  <tabstop>startDateEdit</tabstop>
+  <tabstop>endDateEdit</tabstop>
+  <tabstop>spatialGroupBox</tabstop>
+  <tabstop>northSpin</tabstop>
+  <tabstop>eastSpin</tabstop>
+  <tabstop>southSpin</tabstop>
+  <tabstop>westSpin</tabstop>
+  <tabstop>resetBtn</tabstop>
+  <tabstop>runBtn</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>cfmVarNameEdit</tabstop>
+  <tabstop>observedFileEdit</tabstop>
+  <tabstop>observedFileBrowse</tabstop>
+  <tabstop>historicalFileEdit</tabstop>
+  <tabstop>historicalFileBrowse</tabstop>
+  <tabstop>futureFileEdit</tabstop>
+  <tabstop>futureFileBrowse</tabstop>
+  <tabstop>outLineEdit</tabstop>
+  <tabstop>outBrowse</tabstop>
+  <tabstop>scalingComboBox</tabstop>
+  <tabstop>binsSpinBox</tabstop>
+  <tabstop>cfmResetBtn</tabstop>
+  <tabstop>runButton</tabstop>
+  <tabstop>knnInputEdit</tabstop>
+  <tabstop>knnBrowse</tabstop>
+  <tabstop>knnVarNameEdit</tabstop>
+  <tabstop>knnPerturbation</tabstop>
+  <tabstop>knnAddFile</tabstop>
+  <tabstop>knnTableWidget</tabstop>
+  <tabstop>knnRemoveFile</tabstop>
+  <tabstop>windowSpin</tabstop>
+  <tabstop>lambdaSpin</tabstop>
+  <tabstop>replicationsSpin</tabstop>
+  <tabstop>blockSizeSpin</tabstop>
+  <tabstop>knnOutputLineEdit</tabstop>
+  <tabstop>knnOutputBrowse</tabstop>
+  <tabstop>knnResetInput</tabstop>
+  <tabstop>knnRun</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
