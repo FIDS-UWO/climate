@@ -1,0 +1,6 @@
+Variable,,,tasmax,tasmax,tasmax,tasmax,tasmax,tasmax,tasmax,tasmax,tasmax,tasmax
+Station,,,ELK(Elk R ab Campbell Lk),ERC(Eric Creek ),GLD(Gold R below Ucona R),HEB(Heber River near Gold River),JHT(John Hart Substation),QIN(Quinsam R at Argonaut Br),QSM(Quinsam R nr Campbell R),SAM(Salmon R ab Campbell Div),SCA(Strathcona Dam),WOL(Wolf River Upper)
+Y,M,D,,,,,,,,,,
+1850,1,1,-23.39790673,-23.39808168,-23.08334731,-23.39785351,-23.69814821,-23.39799148,-23.69814921,-23.39792953,-23.3979659,-23.3979389
+1850,1,2,-23.13847279,-23.13908337,-23.17223124,-23.13829348,-23.18966577,-23.13875762,-23.189683,-23.13853753,-23.13866765,-23.13859236
+1850,1,3,-23.22221265,-23.22324308,-23.12285571,-23.22191412,-23.34080029,-23.22268637,-23.34082924,-23.22231251,-23.2225341,-23.222419
