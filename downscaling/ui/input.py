@@ -11,7 +11,7 @@ import numpy as np
 
 from idw import idw
 from cfm import cfm
-from knn import knn
+from knncad import knn
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -192,14 +192,14 @@ class MainWindow(QtWidgets.QMainWindow):
 
                 grouped_files = [os.path.join(path, g) for g in group]
 
-                df = idw(grouped_files,
-                         varname,
-                         stations,
-                         extent=extent,
-                         period=period,
-                         alpha=alpha,
-                         k=points,
-                         **kwargs)
+                df = idw.idw(grouped_files,
+                             varname,
+                             stations,
+                             extent=extent,
+                             period=period,
+                             alpha=alpha,
+                             k=points,
+                             **kwargs)
 
                 df.to_csv(os.path.join(out, 'idw_' + '_'.join(k)) + '.csv')
 
@@ -291,7 +291,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
             self.statusBar().showMessage("Scaling...")
 
-            cfm(his, fut, obs, method, bins).to_csv(fpath)
+            cfm.cfm(his, fut, obs, method, bins).to_csv(fpath)
 
         except Exception as e:
             msg = traceback.format_exc(5)
@@ -388,7 +388,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
             self.statusBar().showMessage("Generating...")
 
-            result = knn(df, P, w=w, B=B, interp=interp, runs=runs)
+            result = knn.knn(df, P, w=w, B=B, interp=interp, runs=runs)
 
             self.statusBar().showMessage("Saving output...")
             self.progressbar.setValue(R + 1)
