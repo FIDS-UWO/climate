@@ -1,8 +1,8 @@
 # Downscaling Models
 
-This directory includes source code for the various statistical downscaling models and toold developed by graduate students at the Facility for Intelligent Decision Support. These models include weather generators, change factor climate scaling algorithms, and regression based models. In addition, a user interface has also been developed to facility the preparation of data files to be used in each model. Each directory here includes one of the downscaling models or tools listed below, along with sample input and output CSV files, and instructions on running the models.
+This directory includes source code for the various statistical downscaling models and tools developed by graduate students at the Facility for Intelligent Decision Support. These models include weather generators, change factor climate scaling algorithms, and regression based models. In addition, a user interface has also been developed to facility the preparation of data files to be used in each model. Each sub-directory here includes one of the downscaling models or tools listed below, along with sample input and output CSV files, and instructions on running the models.
 
-If you wish to use the models that are available here please cite our bluebook available here.
+For more detailed instructuions and information regarding these models, please refer to our bluebook available here. If you wish to use the models for reasearch or publication purposes, please cite the bluebook.
 
 | Model | Directory | Description | Language
 | ------ | ------ | ------ | ------ |
