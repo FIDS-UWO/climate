@@ -4,12 +4,12 @@ This directory includes source code for the various statistical downscaling mode
 
 For more detailed instructuions and information regarding these models, please refer to our bluebook available here. If you wish to use the models for reasearch or publication purposes, please cite the bluebook.
 
-| Model | Directory | Description | Language
-| ------ | ------ | ------ | ------ |
-| Beta Regression (BR) |downscaling/br | | Matlab | 
-| Change Factor Methodology (CFM) | downscaling/cfm | | Python |
-| Inverse Distance Weighted Interpolation (IDW) | downscaling/idw | | Python |
-| K-Nearest Neighbor Weather Generator (KNN-CAD) | downscaling/knncad | | Python|
-| Maximum Entropy Bootstrap Weather Generator (MBEWG) | downscaling/mbewg | | Matlab |
+| Model | Directory | Language
+| ------ | ------ | ------ |
+| Beta Regression (BR) |downscaling/br | Matlab | 
+| Change Factor Methodology (CFM) | downscaling/cfm | Python |
+| Inverse Distance Weighted Interpolation (IDW) | downscaling/idw | Python |
+| K-Nearest Neighbor Weather Generator (KNN-CAD) | downscaling/knncad | Python|
+| Maximum Entropy Bootstrap Weather Generator (MBEWG) | downscaling/mbewg | Matlab |
 
 The interface used to prepare data inputs is located in downscaling/ui.
