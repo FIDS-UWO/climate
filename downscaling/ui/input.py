@@ -868,7 +868,7 @@ class Ui_MainWindow(object):
         self.formLayout_9.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.replicationsLabel)
         self.replicationsSpin = QtWidgets.QSpinBox(self.groupBox_6)
         self.replicationsSpin.setMinimum(1)
-        self.replicationsSpin.setMaximum(20)
+        self.replicationsSpin.setMaximum(9999)
         self.replicationsSpin.setProperty("value", 5)
         self.replicationsSpin.setObjectName("replicationsSpin")
         self.formLayout_9.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.replicationsSpin)
