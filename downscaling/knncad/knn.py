@@ -4,133 +4,132 @@ import numpy as np
 from numba import njit
 
 
-def knn(X, P, w=14, B=10, interp=0.9, runs=1):
-    """
-    Function to idw_run the KNN Weather Generator algorithm. Adapted from
-    King et al. (2012) to use euclidean distance for L nearest neighbor
-    selection as opposed to mahalanobis distance along 1st principal
-    component.
+class KNN:
+    def __init__(self, X, P, w=14, B=10, interp=0.9):
+        """
+        Function to idw_run the KNN Weather Generator algorithm. Adapted from
+        King et al. (2012) to use euclidean distance for L nearest neighbor
+        selection as opposed to mahalanobis distance along 1st principal
+        component.
 
-    Parameters
-    ----------
-    X: pandas.DataFrame
-        Input data following prescribed formatting.
-    P: 1d array
-        Assigns the perturbation type for each column in `X`.\n
-        * 0 - No perturbation
-        * 1 - Normal perturbation
-        * 2 - Log-normal perturbation
-    w: int
-        Window size for the determination of the L and K nearest neighbors.
-    B: int
-        Block size for the block boostrap resampling.
-    interp: float
-        Level of influence of perturbation to be applied. 1 represents full
-        perturbation while 0 represents no perturbation.
-    runs: int
-        The number of runs to be made with length equal to `X`.
+        Parameters
+        ----------
+        X: pandas.DataFrame
+            Input data following prescribed formatting.
+        P: 1d array
+            Assigns the perturbation type for each column in `X`.\n
+            * 0 - No perturbation
+            * 1 - Normal perturbation
+            * 2 - Log-normal perturbation
+        w: int
+            Window size for the determination of the L and K nearest neighbors.
+        B: int
+            Block size for the block boostrap resampling.
+        interp: float
+            Level of influence of perturbation to be applied. 1 represents full
+            perturbation while 0 represents no perturbation.
 
-    Returns
-    -------
-    result: pandas.DataFrame
-        `result` is returned as a DataFrame with the same number of columns as
-        `X` and length equal to `runs` multiplied by that of `X`.
+        Returns
+        -------
+        result: pandas.DataFrame
+            `result` is returned as a DataFrame with the same number of columns
+            as `X` and length equal to `runs` multiplied by that of `X`.
 
-    """
-    # Standardize columns of input data
-    Xn = (X - X.mean()) / X.std()
-    # Group columns of like variables
-    Xt = Xn.groupby(level=0, axis=1).mean()
-    # Get year, month, and day from index
-    year, mon, day = np.array(list(zip(*X.index.values)), dtype=np.uint32)
+        """
+        self.X = X
+        self.P = P
+        self.w = w
+        self.B = B
+        self.interp = interp
 
-    if mon[0] != 1 or day[0] != 1 or mon[-1] != 12 or day[-1] != 31:
-        raise ValueError("Data must start at Jan 1 and end at Dec 31")
+        # Standardize columns of input data
+        self.Xn = (X - X.mean()) / X.std()
+        # Group columns of like variables
+        self.Xt = self.Xn.groupby(level=0, axis=1).mean()
+        # Get year, month, and day from index
+        year, mon, day = np.array(list(zip(*X.index.values)), dtype=np.uint32)
 
-    # Get day of year for all days
-    doy = day_of_year(mon, day)
-    # Apply block bootstrap to input data for all runs
-    result = []
-    for r in range(runs):
-        # Get the bootstrapped values into a dataframe
-        values = bootstrap(X.values, Xt.values, P, doy, w, B, interp)
-        # Construct dataframe
-        df = pd.DataFrame(values, X.index, Xn.columns)
-        # Append dataframe to results list
-        result.append(df)
+        if mon[0] != 1 or day[0] != 1 or mon[-1] != 12 or day[-1] != 31:
+            raise ValueError("Data must start at Jan 1 and end at Dec 31")
 
-    if len(result) > 1:
-        return pd.concat(result,
-                         axis=0,
-                         keys=list(range(runs)),
-                         names=['Run', 'Year', 'Month', 'Day'])
-    else:
-        return result[0]
+        # Get day of year for all days
+        self.doy = day_of_year(mon, day)
 
+    def bootstrap(self, run_id):
+        Xt = self.Xt.values
+        X = self.X.values
 
-def bootstrap(X, Xt, P, doy, w, B, interp):
-    n, m = X.shape
-    # Pre-allocate results array
-    Xsim = np.zeros((n, m))
+        n, m = self.X.shape
+        # Pre-allocate results array
+        Xsim = np.zeros((n, m))
 
-    # Determine K
-    N = np.sum(doy == doy[0])
-    L = N * (w + 1) - 1
-    K = int(round(np.sqrt(L)))
+        # Determine K
+        N = np.sum(self.doy == self.doy[0])
+        L = N * (self.w + 1) - 1
+        K = int(round(np.sqrt(L)))
 
-    # Get L nearest neighbors indices for each day of the year
-    lp1nn_idx = lnn_algorithm(doy, w, L)
+        # Get L nearest neighbors indices for each day of the year
+        lp1nn_idx = lnn_algorithm(self.doy, self.w, L)
 
-    # Generate cumulative probability distribution
-    pn = (np.ones(K) / np.arange(1, K + 1)).cumsum()
-    pn /= pn.max()
+        # Generate cumulative probability distribution
+        pn = (np.ones(K) / np.arange(1, K + 1)).cumsum()
+        pn /= pn.max()
 
-    # Random selection of the first day
-    day1_idx, = np.where(doy == doy[0])
+        # Random selection of the first day
+        day1_idx, = np.where(self.doy == self.doy[0])
 
-    start = np.random.choice(day1_idx)
+        start = np.random.choice(day1_idx)
 
-    Xsim[:B] = X[start: start+B]
+        Xsim[:self.B] = X[start: start+self.B]
 
-    # Loop through each block of size B
-    for i in range(B, n, B):
-        # Randomly select the day before or after leap day
-        if doy[i] < 0:
-            t = i + np.random.choice([-1, 1])
-        else:
-            t = i
+        # Loop through each block of size B
+        for i in range(self.B, n, self.B):
+            # Randomly select the day before or after leap day
+            if self.doy[i] < 0:
+                t = i + np.random.choice([-1, 1])
+            else:
+                t = i
 
-        # Get L + 1 nearest neighbors for current day of the year
-        lp1nn_t = lp1nn_idx[doy[t]]
+            # Get L + 1 nearest neighbors for current day of the year
+            lp1nn_t = lp1nn_idx[self.doy[t]]
 
-        # Remove current day from L + 1 nearest neighbor indices
-        lnn_idx = lp1nn_t[lp1nn_t != t]
+            # Remove current day from L + 1 nearest neighbor indices
+            lnn_idx = lp1nn_t[lp1nn_t != t]
 
-        # Get euclidean distance of current day from L nearest neighbours
-        dist = np.linalg.norm(Xt[lnn_idx] - Xt[t], axis=1)
+            # Get euclidean distance of current day from L nearest neighbours
+            dist = np.linalg.norm(Xt[lnn_idx] - Xt[t], axis=1)
 
-        # Take the K nearest neighbours
-        knn_idx = lnn_idx[dist.argsort()][:K]
+            # Take the K nearest neighbours
+            knn_idx = lnn_idx[dist.argsort()][:K]
 
-        # Randomly draw K nearest neighbor from distribution
-        nn = (abs(pn - np.random.rand())).argmin()
+            # Randomly draw K nearest neighbor from distribution
+            nn = (abs(pn - np.random.rand())).argmin()
 
-        # Set starting index of sampled block
-        j = knn_idx[nn]
+            # Set starting index of sampled block
+            j = knn_idx[nn]
 
-        # Adjust block size if at end of input series
-        B = n - i if i + B > n else B
-        # Adjust selected block if at end of series
-        j = n - B if j + B > n else j
+            # Adjust block size if at end of input series
+            B = n - i if i + self.B > n else self.B
+            # Adjust selected block if at end of series
+            j = n - B if j + B > n else j
 
-        # Obtain K and L nearest neighbors for non-spatially averaged data
-        X_knn = X[knn_idx]
-        X_lnn = X[lnn_idx]
+            # Obtain K and L nearest neighbors for non-spatially averaged data
+            X_knn = X[knn_idx]
+            X_lnn = X[lnn_idx]
 
-        # Apply perturbation for each day in block for each variable
-        Xsim[i: i+B] = perturb(X[j: j+B].copy(), X_knn, X_lnn, P, interp)
+            # Apply perturbation for each day in block for each variable
+            Xsim[i: i+B] = perturb(X[j: j+B].copy(),
+                                   X_knn,
+                                   X_lnn,
+                                   self.P,
+                                   self.interp)
 
-    return Xsim
+        df = pd.DataFrame(Xsim, self.X.index, self.Xn.columns)
+        df['Run'] = run_id
+        df.set_index('Run', append=True, inplace=True)
+        df = df.reorder_levels(['Run', 'Year', 'Month', 'Day'])
+
+        return df
 
 
 @njit

@@ -5,11 +5,10 @@ import os
 import sys
 import traceback
 from itertools import groupby
-
-sys.path.append("..")
-
 import pandas as pd
 import numpy as np
+
+sys.path.append("..")
 
 from idw import idw
 from cfm import cfm
@@ -364,7 +363,7 @@ class MainWindow(QtWidgets.QMainWindow):
         R = self.ui.knnTableWidget.rowCount()
 
         self.statusBar().showMessage("Loading Files...")
-        self.progressbar.setRange(0, R + 2)
+        self.progressbar.setRange(0, R + runs)
         self.progressbar.setValue(0)
         self.progressbar.show()
         self.cancelBtn.show()
@@ -388,16 +387,23 @@ class MainWindow(QtWidgets.QMainWindow):
             df = pd.concat(dfs, axis=1).sort_index(axis=1)
             P = np.array([perturb[v] for v, s in df.columns], np.uint8)
 
-            self.statusBar().showMessage("Generating...")
+            generator = knn.KNN(df, P, w=w, B=B, interp=interp)
 
-            result = knn.knn(df, P, w=w, B=B, interp=interp, runs=runs)
+            for i, r in enumerate(range(runs)):
+                msg = f"Generating replication {i + 1} of {runs}"
+                self.statusBar().showMessage(msg)
 
-            self.statusBar().showMessage("Saving output...")
-            self.progressbar.setValue(R + 1)
+                if self.cancelling:
+                    self.cancelling = False
+                    return
 
-            result.to_csv(outpath)
+                result = generator.bootstrap(i)
+                if i == 0:
+                    result.to_csv(outpath)
+                else:
+                    result.to_csv(outpath, mode='a')
 
-            self.progressbar.setValue(R + 2)
+                self.progressbar.setValue(R + i)
 
         except Exception as e:
             msg = traceback.format_exc(5)
